@@ -1,0 +1,105 @@
+extends ../../layout
+
+block content
+  include ../../includes/subs_banner
+  // //banner
+  .admission
+    .container
+      .faculty_top
+        each user,i in users1
+          .col-md-4.faculty_grid
+            figure.team_member
+              img.img-responsive.wp-post-image(src='/images/fc'+i+'.jpg', alt='')
+              div
+              figcaption
+                h3.person-title
+                  a(href='/user/info/'+user._id) #{user.courses.length}个成就已达成
+                span.person-deg #{user.name}
+                p 联系我 : 
+                  a(href='mailto:'+user.email) #{user.email}
+                p #{user.description}
+                .person-social
+                  ul.social-person
+                    li
+                      a(href='#')
+                        i.fa.fa-facebook
+                    li
+                      a(href='#')
+                        i.fa.fa-google-plus
+                    li
+                      a(href='#')
+                        i.fa.fa-twitter
+                    li
+                      a(href='#')
+                        i.fa.fa-youtube
+        .clearfix  
+      .faculty_top
+        each user,i in users2
+          .col-md-4.faculty_grid
+            figure.team_member
+              img.img-responsive.wp-post-image(src='/images/fc'+(i+3)+'.jpg', alt='')
+              div
+              figcaption
+                h3.person-title
+                  a(href='/user/info/'+user._id) #{user.courses.length}个成就已达成
+                span.person-deg #{user.name}
+                p 联系我 : 
+                  a(href='mailto:'+user.email) #{user.email}
+                p #{user.description}
+                .person-social
+                  ul.social-person
+                    li
+                      a(href='#')
+                        i.fa.fa-facebook
+                    li
+                      a(href='#')
+                        i.fa.fa-google-plus
+                    li
+                      a(href='#')
+                        i.fa.fa-twitter
+                    li
+                      a(href='#')
+                        i.fa.fa-youtube
+        .clearfix 
+      .faculty_bottom
+        each user,i in users3
+          .col-md-4.faculty_grid
+            figure.team_member
+              img.img-responsive.wp-post-image(src='/images/fc'+(i+6)+'.jpg', alt='')
+              div
+              figcaption
+                h3.person-title
+                  a(href='/user/info/'+user._id) #{user.courses.length}个成就已达成
+                span.person-deg #{user.name}
+                p 联系我 : 
+                  a(href='mailto:'+user.email) #{user.email}
+                p #{user.description}
+                .person-social
+                  ul.social-person
+                    li
+                      a(href='#')
+                        i.fa.fa-facebook
+                    li
+                      a(href='#')
+                        i.fa.fa-google-plus
+                    li
+                      a(href='#')
+                        i.fa.fa-twitter
+                    li
+                      a(href='#')
+                        i.fa.fa-youtube
+        .clearfix 
+      ul.pagination
+        - for (var i = 0; i< totalPage; i++){
+          - if(currentPage == (i + 1)){
+            li.active
+              span #{currentPage}
+          - }
+          - else{
+            li
+              if query
+                a(href="/user/rank?p="+i+"&"+query) #{i+1}
+              else
+                a(href="/user/rank?p="+i) #{i+1}
+          - }
+        - }

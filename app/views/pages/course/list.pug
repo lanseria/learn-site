@@ -1,0 +1,39 @@
+extends ../../layout
+
+block content
+  include ../../includes/subs_banner
+  .courses_box1
+    .container
+      .col-md-3
+        include ../../includes/course_search
+        hr
+      .col-md-9
+        .course_list
+          .table-header.clearfix
+            .id_col ID
+            .name_col 课程名字
+            .duration_col 难度
+            .date_col 花费时间
+          ul.table-list
+            each item in courses
+              li.clearfix
+                .id_col #{item.urlid}
+                .name_col
+                  a(href='/course/detail/'+item._id) #{item.title}
+                .duration_col #{item.nd}
+                .date_col #{item.wt}
+          ul.pagination
+            - for (var i = 0; i< totalPage; i++){
+              - if(currentPage == (i + 1)){
+                li.active
+                  span #{currentPage}
+              - }
+              - else{
+                li
+                  if query
+                    a(href="/course/results?p="+i+"&"+query) #{i+1}
+                  else
+                    a(href="/course/list?p="+i) #{i+1}
+              - }
+            - }
+      .clearfix  

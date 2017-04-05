@@ -1,0 +1,46 @@
+.grid_1
+  .container
+    .col-md-4
+      .news
+        h1 手记
+        .section-content
+          each article in articles
+            article
+              figure.date
+                i.fa.fa-file-o
+                | public at #{moment(article.updateAt).format('MM-DD-YYYY')}
+              a(href="/article/info/"+article._id) #{article.title}
+        // /.section-content
+        a.read-more(href='#') 所有手记
+      // /.news-small
+    .col-md-8.grid_1_right
+      h2 课程计划
+      .but_list
+        .bs-example.bs-example-tabs(role='tabpanel', data-example-id='togglable-tabs')
+          ul#myTab.nav.nav-tabs.nav-tabs1(role='tablist')
+            li.active(role='presentation')
+              a#home-tab(href='#home', role='tab', data-toggle='tab', aria-controls='home', aria-expanded='true') 每周六 Sat
+          #myTabContent.tab-content
+            #home.tab-pane.fade.in.active(role='tabpanel', aria-labelledby='home-tab')
+              .events_box
+                .event_left
+                  .event_left-item
+                    .icon_2
+                      i.fa.fa-clock-o
+                      | 19:30 - 21:00
+                    .icon_2
+                      i.fa.fa-location-arrow
+                      | 活动中心211
+                    .icon_2
+                      .speaker
+                        i.fa.fa-user
+                        .speaker_item
+                          a(href='/user/info/58e336cc6868ab09147dd3a2') 张超(教学员)
+                        .clearfix
+                .event_right
+                  h3
+                    a(href='#') WEB前端工程师的培训
+                  p
+                    | 这个培训主要学习HTML,CSS,JS,NODE.js等前端知识
+                  //- img.img-responsive(src='/images/t9.jpg', alt='')
+                .clearfix

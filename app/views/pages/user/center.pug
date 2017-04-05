@@ -1,0 +1,47 @@
+extends ../../layout
+
+block content
+  include ../../includes/subs_banner
+  .courses_box1
+    .container
+      .col-md-3
+        .courses_box1-left
+          a.btn.btn-info.btn-block(href="/user/center", class=baseurl=='/user/center' ? 'active' : '') 我的进度
+          a.btn.btn-info.btn-block(href="/user/article", class=baseurl=='/user/article' ? 'active' : '') 我的笔记
+          a.btn.btn-info.btn-block(href="/user/account", class=baseurl=='/user/account' ? 'active' : '') 我的账户
+        include ../../includes/personbox
+
+      .col-md-9
+        each item in courses
+          .event-page
+            .row
+              .col-xs-4.col-sm-4
+                .event-img
+                  a(href='event_single.html')
+                    img.img-responsive(src='/images/e1.jpg', alt='')
+                  .over-image
+              .col-xs-8.col-sm-8.event-desc
+                h2
+                  a(href='event_single.html') #{item.courseid.title}
+                .event-info-text
+                  .event-info-middle
+                    p(style='display:inline;')
+                      span.event-bold 类别 :  
+                    ul.event-speakers(style='display:inline')
+                      li
+                        a(href='/course/results?q='+item.courseid.categary) #{item.courseid.categary}
+                      li
+                        a(href='/course/results?q='+item.courseid.coursetype) #{item.courseid.coursetype}
+                    p
+                      span.event-bold 上次更新日期 :  
+                      | #{moment(item.finishAt).format('MM/DD/YYYY')}
+                    p
+                      span.event-bold 完成度 :  
+                      | 已完成#{item.progress}%
+                      a.btn(href="/course/updateProgress/"+item.courseid._id) 忘记了,去更新
+                    p
+                      span.event-bold 难度 :  
+                      | #{item.courseid.nd}
+                    p
+                      span.event-bold 需要时间 :  
+                      | #{item.courseid.wt}

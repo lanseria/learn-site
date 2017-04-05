@@ -1,0 +1,35 @@
+extends ../../layout
+
+block content
+  include ../../includes/subs_banner
+  .courses_box1
+    .container
+      .col-md-3
+        include ../../includes/course_search
+        hr
+        .courses_box1-left
+          .progress
+            .progress-bar.progress-bar-success.progress-bar-striped.active(role="progressbar", aria-valuenow=progress, aria-valuemin="0", aria-valuemax="100", style="width: "+progress+"%;min-width: 2em;")
+              | #{progress}%
+          p #{progress}% 当前进度
+      .col-md-9.detail
+        .alert.alert-dismissible.admission-alert.info(role='alert')
+          button.close(type='button', data-dismiss='alert')
+            span(aria-hidden='true')
+              i.fa.fa-times-circle
+            span.sr-only Close
+          br
+          | 《#{sub_title}》此门课程难度系数为#{nd},大致需要花费你#{wt}.
+        form(method="POST",action="/course/applyProgress")
+          p.lead 请根据你自己慕课网的信息,以及你自己的打分,填入你对这门课的进度
+          .form-group
+            input(type='hidden', name='course[courseid]', value=cid)
+            input.required.form-control#progress(autocomplete='off', type='text', name='course[progress]', placeholder='以100为满额')
+            hr
+            .progress
+              .progress-bar#thisprogress(role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;min-width: 2em;")
+                | 60%
+          .form-group
+            input.btn.btn-primary.btn-lg1.btn-block(type='submit', name='submit', value='更新')
+      .clearfix
+  script(src="/js/oninput.js")

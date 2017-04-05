@@ -1,0 +1,17 @@
+nav.navbar.nav_bottom(role='navigation')
+  .container
+    // Brand and toggle get grouped for better mobile display
+    .navbar-header.nav_2
+      button.navbar-toggle.collapsed.navbar-toggle1(type='button', data-toggle='collapse', data-target='#bs-megadropdown-tabs')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='#')
+    // Collect the nav links, forms, and other content for toggling
+    #bs-megadropdown-tabs.collapse.navbar-collapse
+      ul.nav.navbar-nav.nav_1
+        each val in memu
+          li
+            a(href=val.url) #{val.name}
+    // /.navbar-collapse

@@ -1,0 +1,18 @@
+.details
+  .container
+    form(method="GET", action="/course/results")
+      .col-sm-10.dropdown-buttons
+        .col-sm-6.dropdown-button
+          .input-group
+            input#slider-name.form-control.has-dark-background(name='q', placeholder='课程名字', type='text', required='')
+        .col-sm-6.dropdown-button
+          .section_1
+            select#country.frm-field.required(onchange='change_country(this.value)')
+              option(value='null') 难度
+              option(value='null') 初级
+              option(value='AX') 中级
+              option(value='AX') 高级
+        .clearfix  
+      .col-sm-2.submit_button
+          input(type='submit', value='搜索')
+      .clearfix  

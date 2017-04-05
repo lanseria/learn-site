@@ -1,0 +1,18 @@
+extends ../../layout
+block content
+  link(href='/css/article.css', rel='stylesheet', type='text/css')
+  .courses_box1
+    .container
+      .col-md-9
+        h1.detail-title #{article.title}
+        .dc-addon.clearfix
+          .dc-profile.clearfix
+            span.spacer.l #{article.pv}浏览
+            span.spacer.l.spacer-2 #{article.recom}赞
+            a.spacer.l(href="#commet") #{article.judge}评论
+        .detail-content
+          |!{article.content}
+      .col-md-3
+        include ../../includes/personbox
+  script(src="/js/prettify.js")
+  script(src="/js/detail.js")

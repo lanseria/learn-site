@@ -1,0 +1,52 @@
+extends ../../layout
+
+block content
+  link(href='/css/list.css', rel='stylesheet', type='text/css')
+  .features
+    .container
+      h1 学员手记
+      each article in articles
+        .blog_box1
+          dl.item_info_dl
+            h2
+              a(href='/article/info/'+article._id) #{article.title}
+            dd
+              address.item_createdby
+                | Posted by 
+                if article.user.role >= 40
+                  | Root
+                else if article.user.role >= 30
+                  | 管理员
+                else if article.user.role >= 20
+                  | 部长
+                else if article.user.role >= 10
+                  | 教学员
+                else if article.user.role >= 0
+                  | 学员
+                a(href='/user/info/'+article.user._id) #{article.user.name}
+            dd
+              time.item_published(datetime=article.updateAt)
+                | on #{moment(article.updateAt).format('MM-DD-YYYY')}
+            .r.right-info
+              span.looked #{article.pv}浏览
+              span.recom #{article.recom}赞
+              span.judge #{article.judge}评论
+          a(href='/article/info/'+article._id)
+            img.img-responsive(src='/upload/mainimg/'+article.mainimgurl, alt=article.title)
+          p
+            | #{article.description}
+          a.radial_but(href='/article/info/'+article._id) Read More
+        ul.pagination
+          - for (var i = 0; i< totalPage; i++){
+            - if(currentPage == (i + 1)){
+              li.active
+                span #{currentPage}
+            - }
+            - else{
+              li
+                if query
+                  a(href="/article/list/?p="+i+"&"+query) #{i+1}
+                else
+                  a(href="/article/list/?p="+i) #{i+1}
+            - }
+          - }

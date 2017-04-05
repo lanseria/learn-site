@@ -1,0 +1,41 @@
+extends ../../layout
+
+block content
+  include ../../includes/subs_banner
+  .courses_box1
+    .container
+      .col-md-3
+        include ../../includes/course_search
+        hr
+        .courses_box1-left
+          .progress
+            .progress-bar.progress-bar-success.progress-bar-striped.active(role="progressbar", aria-valuenow=progress, aria-valuemin="0", aria-valuemax="100", style="width: "+progress+"%;min-width: 2em;")
+              | #{progress}%
+          p #{progress}% 当前进度
+          a.btn.btn-info(href="/course/updateProgress/"+cid) 更新课程进度
+      .col-md-9.detail
+        //- img.img-responsive(src='/images/course.jpg', alt='')
+        h3 课程大纲
+        p #{sub_description}
+          a(href="http://www.imooc.com/learn/"+urlid) 课程链接
+        each items in chapters
+          .panel-group(id="accordion"+items._id, role='tablist', aria-multiselectable='false')
+            each item in items.citems
+              .panel.panel-default
+                .panel-heading(role='tab', id="heading"+item._id)
+                  h4.panel-title
+                    a(role='button', data-toggle='collapse', data-parent='#accordion'+items._id, href='#collapse'+item._id, aria-expanded='true', aria-controls='collapseOne')
+                      i.fa.fa-bookmark-o.icon_3
+                      | #{item.title}
+                .panel-collapse.collapse(role='tabpanel', aria-labelledby='heading'+item._id, aria-expanded='true',id="collapse"+item._id)
+                  .panel-body
+                    span 类型:
+                    if item.type=='code/'
+                      span 编程题
+                    else
+                      span 视频
+                    br
+                    span 相关链接:
+                    a(href="http://www.imooc.com/" + item.type + item.id, target="_blank") 链接
+                    
+      .clearfix  

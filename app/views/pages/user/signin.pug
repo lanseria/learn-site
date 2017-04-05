@@ -1,0 +1,16 @@
+extends ../../layout
+
+block content
+  include ../../includes/subs_banner
+  .courses_box1
+    .container
+      form.login(method="POST",action="/user/signin")
+        p.lead Welcome Back!
+        .form-group
+          input.required.form-control(autocomplete='off', type='text', name='user[stunumber]', placeholder='学号')
+        .form-group
+          input.password.required.form-control(autocomplete='off', type='password', placeholder='登录密码', name='user[password]')
+        .form-group
+          input(type='checkbox', name='remember', value='true')
+          |  Remember Me
+          input.btn.btn-primary.btn-lg1.btn-block(type='submit', name='submit', value='登录')

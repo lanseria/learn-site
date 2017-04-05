@@ -1,0 +1,9 @@
+.r {
+  float: right;
+}
+.right-info span {
+  padding-left: 30px;
+  font-size: 20px;
+  color: #93999f;
+  line-height: 19px;
+}

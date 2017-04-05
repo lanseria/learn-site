@@ -1,0 +1,50 @@
+extends ../../layout
+block content
+  link(href='/css/wangEditor.min.css', rel='stylesheet', type='text/css')
+  include ../../includes/subs_banner
+  .courses_box1
+    .container
+      .col-md-3
+        .courses_box1-left
+          a.btn.btn-info.btn-block(href="/user/center", class=baseurl=='/user/center' ? 'active' : '') 我的进度
+          a.btn.btn-info.btn-block(href="/user/article", class=baseurl=='/user/article' ? 'active' : '') 我的笔记
+          a.btn.btn-info.btn-block(href="/user/account", class=baseurl=='/user/account' ? 'active' : '') 我的账户
+        include ../../includes/personbox
+      .col-md-9
+        .news
+          h1 我的手记
+          .section-content
+            each article in articles
+              article
+                figure.date
+                  i.fa.fa-file-o
+                  | public at #{moment(article.updateAt).format('MM-DD-YYYY')}
+                a(href="/article/info/"+article._id) #{article.title}
+        .panel-group(id="accordion", role='tablist', aria-multiselectable='false')
+          .panel.panel-default
+            .panel-heading(role='tab', id="heading")
+              h4.panel-title
+                a(role='button', data-toggle='collapse', data-parent='#accordion', href='#collapse', aria-expanded='true', aria-controls='collapseOne')
+                  i.fa.fa-bookmark-o.icon_3
+                  | 发表新手记
+            .panel-collapse.collapse(role='tabpanel', aria-labelledby='heading', aria-expanded='true',id="collapse")
+              .panel-body
+                form(method="post", action="/user/newArticle", enctype="multipart/form-data")
+                  .form-group
+                    h2 撰写新文章
+                  .form-group
+                    input.required.form-control(type='text', autocomplete='off', placeholder='在此输入标题 *', name='article[title]', value='')
+                  .form-group
+                    input(type="file", id="inputMainimg", name="inputMainimg", accept="image/gif, image/jpeg, image/png")
+                    p.help-block 这里设置文章的主要图片
+                  .form-group
+                    textarea.form-control(name="article[description]", rows="3", placeholder="简要说明你的手记")
+                    p.help-block 正文
+                  .form-group
+                    textarea#textarea1(style="height:400px;", name='article[content]')
+                      p 请输入内容...
+                  .form-group
+                    input.btn.btn-info.btn-lg.col-sm-6.col-sm-offset-3.col-xs-6.col-xs-offset-3(type='submit', name='submit', value='发布')
+  script(src='/js/wangEditor.min.js')
+  script(src='/js/wangCreate.js')
+        
