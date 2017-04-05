@@ -11,9 +11,9 @@
 
 以[Express](http://expressjs.com/)作为web框架
 
-用了[mongo](mongodb.com)为数据库,并用[mongoose](http://mongoosejs.com/)作为连接插件
+用了[mongo](http://mongodb.com)为数据库,并用[mongoose](http://mongoosejs.com/)作为连接插件
 
-项目主页如下如所示
+项目主页如下如所示(点击可以查看)
 
 [![项目主页](https://raw.github.com/Lanseria/learnSite/master/docs/images/index.png)](http://learn.limonplayer.cn/index)
 
