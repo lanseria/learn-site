@@ -15,7 +15,7 @@
 
 项目主页如下如所示
 
-[![项目主页](https://raw.github.com/Lanseria/learnSite/master/docs/images/index.jpg)](http://learn.limonplayer.cn/index)
+[![项目主页](https://raw.github.com/Lanseria/learnSite/master/docs/images/index.png)](http://learn.limonplayer.cn/index)
 
 
 
