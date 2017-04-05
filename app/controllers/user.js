@@ -3,7 +3,7 @@ var User = require('../models/user');
 var Article = require('../models/article');
 var fs = require('fs');
 var path = require('path');
-var images = require("images");
+var images = require('images');
 var _ = require('lodash');
 
 exports.newArticle = function(req, res){
