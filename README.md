@@ -3,7 +3,44 @@
 
 ## 简介
 
-本项目是大学生社团分布式管理系统的子项目,用于其管理学员的学习进度的问题,由于的分布式所以其注册信息都可以从管理系统提供的API利用JSONP跨域获取到,方便学员进行注册.
+本项目是[大学生社团分布式管理系统](#)的子项目,用于其管理学员的学习进度的问题,由于是分布式系统的原因,所以其注册信息都可以从管理系统提供的API利用JSONP跨域获取到,方便学员进行注册.
+1. 项目后端的搭建 :
+
+- 使用`NodeJs`的`express`框架完成网站后端搭建; 
+- 使用`mongodb`完成数据存储,通过mongoose模块完成对mongodb数据的构建;使用pug模板引擎完成页面创建渲染;
+- 使用`Moment.js`格式化电影存储时间;
+
+2. 项目前端搭 :
+
+- 使用jQuery和Bootsrap完成网站前端JS脚本和样式处理;
+- 使用validate.js完成对账号登录注册的判断;
+- 前后端的数据请求交互通过Ajax完成;
+- 跨域的数据请求交互通过Ajax中的jsonp完成;
+
+3.本地环境的搭建 : 
+
+- 开发环境在windows10下完成
+- 运行在ubuntu 16 下,并通过nginx端口代理完成域名与服务器的连接
+
+## Design 设计
+
+项目主页如下如所示(点击可以查看)
+
+[![项目主页](https://raw.github.com/Lanseria/learnSite/master/docs/images/index.png)](http://learn.limonplayer.cn/index)
+
+[![项目部分截图](https://raw.github.com/Lanseria/learnSite/master/docs/images/index.png)](http://learn.limonplayer.cn/index)
+
+
+
+### 详细功能
+
+本项目由学习进度`course`和文章发表`article`两大功能 .
+- 其中具有重要特色的功能是慕课网信息的爬取与使用`spider` , 利用`superagent`插件.
+- 其次具有简单的用户登录和注册`user` , 用户的头像上传
+- 对用户的学习进度进行排序`rank`(可以比较出学员的积极性)
+- 对课程`course`的搜索`search`
+- 还有对每个列表页面进行分页`page`处理
+- 访客次数统计`pv`
 
 ### 项目结构:
 ```
@@ -51,14 +88,23 @@
 ├── gruntfile.js      grunt文件
 └── package.json
 ```
+## 运行环境及Node版本:
+
+- 目前在windows10下以及ubuntu 16下都能很好运行,当然[nodejs](https://nodejs.org/en/)不能是最新7的版本
+
+- 安装[mongodb](https://www.mongodb.org/downloads#production)完成相关配置;
+
+- 在当前项目目录中使用npm install命令安装相关模块(如果模块下载速度慢可考虑使用淘宝cnpm镜像进行下载);
 
 ## Installation 安装
 
-## Design 设计
+- 首先对node与mongo进行安装
+- 通过`mongorestore -d dbs -dir path  `进行数据库的导入
+- 接着安装插件`npm install`
+- `forever start app.js `对应用进行后台处理
+- 如果需要nginx进行代理则设置相应的代理
 
-项目主页如下如所示(点击可以查看)
 
-[![项目主页](https://raw.github.com/Lanseria/learnSite/master/docs/images/index.png)](http://learn.limonplayer.cn/index)
 
 ## Thanks for 感谢
 <p align="center">
