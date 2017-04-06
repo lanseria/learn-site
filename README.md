@@ -9,9 +9,9 @@
 ```
 ├── app.js            项目入口文件
 ├── app               Node后端MVC文件目录
-│   ├── routes		  路由目录
+│   ├── routes        路由目录
 │   ├── controllers   控制器目录
-│   │   ├── api     	  API页面控制器目录
+│   │   ├── api       API页面控制器目录
 │   │   ├── index     主页页面控制器目录
 │   │   ├── user      用户页面控制器目录
 │   │   ├── article   文章页面控制器目录
