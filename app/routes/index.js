@@ -22,23 +22,23 @@ module.exports = function(app){
   app.get('/course/list', Course.list)
   app.get('/course/detail/:id', User.signinRequired, Course.detail)
   app.get('/course/results', Course.search)
-  app.get('/course/updateProgress/:cid', Course.updateProgress)
-  app.post('/course/applyProgress', Course.applyProgress)
+  app.get('/course/updateProgress/:cid', User.signinRequired, Course.updateProgress)
+  app.post('/course/applyProgress', User.signinRequired, Course.applyProgress)
 
   app.get('/signin', User.showSignin)
 
   app.post('/user/signin', User.signin)
   app.get('/signup', User.showSignup)
 
-  app.post('/user/signup', multipartMiddleware, User.saveAvatar, User.signup)
-  app.get('/logout',User.logout)
-  app.get('/user/center',User.center)
-  app.get('/user/article',User.article)
+  app.post('/user/signup',  multipartMiddleware, User.saveAvatar, User.signup)
+  app.get('/logout', User.signinRequired, User.logout)
+  app.get('/user/center', User.signinRequired, User.center)
+  app.get('/user/article', User.signinRequired, User.article)
   app.get('/user/rank',User.rank)
-  app.get('/user/info/:id',User.info)
+  app.get('/user/info/:id', User.info)
   app.get('/teachers', User.tlist)
 
-  app.post('/user/newArticle', multipartMiddleware, User.saveMainimg, User.newArticle)
+  app.post('/user/newArticle', User.signinRequired, multipartMiddleware, User.saveMainimg, User.newArticle)
 
   app.get('/article/info/:id', Article.detail)
   app.get('/article/list', Article.list)
