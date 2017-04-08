@@ -28,7 +28,9 @@
 
 [![项目主页](https://raw.github.com/Lanseria/learnSite/master/docs/images/index.png)](http://learn.limonplayer.cn/index)
 
-[![项目部分截图](https://raw.github.com/Lanseria/learnSite/master/docs/images/index.png)](http://learn.limonplayer.cn/index)
+[![项目部分截图](https://raw.github.com/Lanseria/learnSite/master/docs/images/detail1.png)](http://learn.limonplayer.cn/)
+
+[![项目部分截图](https://raw.github.com/Lanseria/learnSite/master/docs/images/detail2.png)](http://learn.limonplayer.cn/)
 
 
 
