@@ -27,3 +27,9 @@ exports.about = function(req, res){
     
   });
 }
+
+exports.classinfo = function(req, res){
+  res.render('classinfo', {
+    
+  });
+}

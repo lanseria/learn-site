@@ -45,4 +45,6 @@ module.exports = function(app){
 
   app.get('/about', Index.about)
 
+  app.get('/classinfo', Index.classinfo)
+
 }
