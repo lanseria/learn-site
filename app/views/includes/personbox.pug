@@ -1,50 +1,50 @@
 .personBox
   .personBox_1
     .person_image
-      img.img-responsive.img-circle(src='/upload/avatar/'+user.avatarurl, alt=user.name)
+      img.img-responsive.img-circle(src='/upload/avatar/'+muser.avatarurl, alt=muser.name)
     .person_image_desc
-      h1 #{user.name}
+      h1 #{muser.name}
       p 
-        if user.role >= 40
+        if muser.role >= 40
           | Root
-        else if user.role >= 30
+        else if muser.role >= 30
           | 管理员
-        else if user.role >= 20
+        else if muser.role >= 20
           | 部长
-        else if user.role >= 10
+        else if muser.role >= 10
           | 教学员
-        else if user.role >= 0
+        else if muser.role >= 0
           | 学员
     .clearfix  
     .person_description
       p
         span.event-bold 学号 :  
-        | #{user.stunumber}
+        | #{muser.stunumber}
       p
         span.event-bold 性别 :  
-        | #{user.gender}
+        | #{muser.gender}
       p
         span.event-bold 年龄 :  
-        | #{user.age}
+        | #{muser.age}
       p
         span.event-bold 学院 :  
-        | #{user.college}
+        | #{muser.college}
       p
         span.event-bold 专业 :  
-        | #{user.cclass}
+        | #{muser.cclass}
       p
         span.event-bold 电话 :  
-        | #{user.tel}
+        | #{muser.tel}
       p
         span.event-bold email :  
-        | #{user.email}
+        | #{muser.email}
       p
         span.event-bold 登陆次数 :  
-        | #{user.pv}
+        | #{muser.pv}
       p
         span.event-bold 最近登录时间 :  
-        | #{moment(user.updateAt).format('MM/DD/YYYY')}
+        | #{moment(muser.updateAt).format('MM/DD/YYYY')}
       p 个人介绍 :
       p
-        | #{user.description}
+        | #{muser.description}
         //- a(href='#') More..

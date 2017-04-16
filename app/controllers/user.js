@@ -63,7 +63,7 @@ exports.info = function(req, res){
       sub_title: user.name+'的成就墙',
       sub_description: '这里你能看到TA完成的所有慕课.',
       courses: courses,
-      user: user,
+      muser: user,
       currentPage: (page+1),
       totalPage: Math.ceil(user.courses.length/count),
     })
