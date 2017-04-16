@@ -106,7 +106,7 @@ exports.article = function(req, res){
         sub_title: '个人中心',
         sub_description: '这里是'+user.name+'的个人中心',
         courses: user.courses,
-        user: user,
+        muser: user,
         baseurl: req.url,
         articles: articles,
       })
@@ -125,7 +125,7 @@ exports.center = function(req, res){
       sub_title: '个人中心',
       sub_description: '这里是'+user.name+'的个人中心',
       courses: user.courses,
-      user: user,
+      muser: user,
       baseurl: req.url,
     })
   })

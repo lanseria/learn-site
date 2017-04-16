@@ -7,33 +7,35 @@ block content
       form.login(method="post", action="/user/signup", enctype="multipart/form-data")
         p.lead 注册修改你的新账户
         .form-group
-          input.required.form-control#userapi(type='text', autocomplete='off', placeholder='学号 *', name='user[stunumber]', value='')
+          input.form-control#userapi(type='text', autocomplete='off', placeholder='学号 *', name='user[stunumber]', value='')
         .form-group
-          input.required.form-control#inputCollege(type='text', autocomplete='off', placeholder='学院 *', name='user[college]', value='')
+          input.form-control#inputCollege(type='text', autocomplete='off', placeholder='学院 *', name='user[college]', value='')
         .form-group
-          input.required.form-control#inputCclass(type='text', autocomplete='off', placeholder='班级 *', name='user[cclass]', value='')
+          input.form-control#inputCclass(type='text', autocomplete='off', placeholder='专业 *', name='user[cclass]', value='')
         .form-group
-          input.required.form-control#inputName(type='text', autocomplete='off', placeholder='姓名 *', name='user[name]', value='')
+          input.form-control#inputName(type='text', autocomplete='off', placeholder='姓名 *', name='user[name]', value='')
         .form-group
-          input.required.form-control#inputGender(type='text', autocomplete='off', placeholder='性别 *', name='user[gender]', value='')
+          input.form-control#inputGender(type='text', autocomplete='off', placeholder='性别 *', name='user[gender]', value='')
         .form-group
-          input.required.form-control#inputAge(type='text', autocomplete='off', placeholder='年龄 *', name='user[age]', value='')
+          input.form-control#inputAge(type='text', autocomplete='off', placeholder='年龄 *', name='user[age]', value='')
         .form-group
-          input.required.form-control(type='password', placeholder='Password *', name='user[password]', value='')
+          input.form-control#password(type='password', placeholder='Password *', name='user[password]', value='')
         .form-group
-          input.required.form-control(type='password', placeholder='Conform Password *', value='')
+          input.form-control#confirm_password(type='password', placeholder='Conform Password *', name='confirm_password', value='')
         .form-group
-          input.required.form-control(type='text', autocomplete='off', placeholder='Email *', name='user[email]', value='')
+          input.form-control#email(type='text', autocomplete='off', placeholder='Email *', name='user[email]', value='')
         .form-group
-          input.required.form-control#inputTel(type='text', autocomplete='off', placeholder='电话 *', name='user[tel]', value='')
+          input.form-control#inputTel(type='text', autocomplete='off', placeholder='电话 *', name='user[tel]', value='')
         .form-group
           textarea.form-control#inputDescription(rows="3", placeholder="自我介绍", name="user[description]")
         .form-group
-          input(type="file", id="inputAvatar", name="inputAvatar")
+          input(type="file", id="inputAvatar", name="inputAvatar", class="required" accept="image/*")
           p.help-block 这里设置你的头像
         .form-group
           input.btn.btn-primary.btn-lg1.btn-block(type='submit', name='submit', value='注册')
         p
           | 已经有一个账户了? 
           a(href='/signin') 登录
+  script(src="/js/jquery.validate.min.js")
+  script(src="/js/messages_zh.js")
   script(src="/js/jsonp.js")

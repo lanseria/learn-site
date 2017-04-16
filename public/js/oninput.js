@@ -10,11 +10,6 @@ $('#progress').bind('input propertychange', function(){
   $('#thisprogress').css("width", pro+"%");
   $('#thisprogress').html(pro+"%");
 })
-$.validator.setDefaults({
-    submitHandler: function() {
-      alert("提交了哦!");
-    }
-});
 $().ready(function() {
     $("#commentForm").validate();
 });

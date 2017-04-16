@@ -30,7 +30,7 @@ exports.detail = function(req, res){
     User.findById(article.user, function(err, user){
       Article.update({_id: id},{$inc: {pv: 1}}, function(err){
         res.render('article/detail', {
-          user: user,
+          muser: user,
           article: article,
         })
       })
