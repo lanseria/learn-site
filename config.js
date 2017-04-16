@@ -23,7 +23,7 @@ var config = {
         url: '/article/list'
       },
       {
-        name: "Happy论坛", 
+        name: "社团论区", 
         url: 'http://nodebb.limonplayer.cn/'
       },
       {
