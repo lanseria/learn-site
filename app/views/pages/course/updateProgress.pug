@@ -20,16 +20,18 @@ block content
             span.sr-only Close
           br
           | 《#{sub_title}》此门课程难度系数为#{nd},大致需要花费你#{wt}.
-        form(method="POST",action="/course/applyProgress")
+        form#commentForm(method="POST",action="/course/applyProgress")
           p.lead 请根据你自己慕课网的信息,以及你自己的打分,填入你对这门课的进度
           .form-group
             input(type='hidden', name='course[courseid]', value=cid)
-            input.required.form-control#progress(autocomplete='off', type='text', name='course[progress]', placeholder='以100为满额')
+            input.required.form-control#progress(autocomplete='off', type='number', name='course[progress]', placeholder='以100为满额' value=progress==null?"0":progress, required=true)
             hr
             .progress
-              .progress-bar#thisprogress(role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;min-width: 2em;")
-                | 0%
+              .progress-bar#thisprogress(role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;width:"+progress+"%;")
+                | #{progress}%
           .form-group
             input.btn.btn-primary.btn-lg1.btn-block(type='submit', name='submit', value='更新')
       .clearfix
+  script(src="/js/jquery.validate.min.js")
+  script(src="/js/messages_zh.js")
   script(src="/js/oninput.js")

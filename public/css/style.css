@@ -15,6 +15,10 @@ body a{
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
+/*我自己加的*/
+.error{
+  color: red;
+}
 .navbar-default {
     background-color:#f1b458 !important;
     border-color:#f1b458;
